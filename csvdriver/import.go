@@ -12,11 +12,11 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/go-hep/csvutil"
+	"github.com/luanhailiang/gocsvutil"
 )
 
 func (conn *csvConn) importCSV() error {
-	tbl, err := csvutil.Open(conn.cfg.File)
+	tbl, err := gocsvutil.Open(conn.cfg.File)
 	if err != nil {
 		return err
 	}
@@ -85,7 +85,7 @@ func (conn *csvConn) importCSV() error {
 }
 
 func inferSchema(conn *csvConn) (schemaType, error) {
-	tbl, err := csvutil.Open(conn.cfg.File)
+	tbl, err := gocsvutil.Open(conn.cfg.File)
 	if err != nil {
 		return nil, err
 	}
